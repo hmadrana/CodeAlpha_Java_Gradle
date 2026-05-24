@@ -20,16 +20,7 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Setup Gradle Environment
-      uses: gradle/actions/setup-gradle@v3
-
-    - name: Compile and Execute Unit Tests
+    - name: Build and Test with Gradle
       run: |
         cd app
-        gradle test
-
-    - name: Assemble Production Build Jar
-      run: |
-        cd app
-        gradle build -x test
-        
+        gradle build
